@@ -3,7 +3,7 @@ Project Name:
 Course and Job credibility system
 
 Description
-The product being developed checks if the course or job opening we're looking at is credible or not.
+The product being developed checks if the course we're looking at is credible or not.
 
 Features
 .Credibility system
