@@ -1,6 +1,6 @@
 Project Name:
 
-Course and Job credibility system
+Course credibility system
 
 Description
 The product being developed checks if the course we're looking at is credible or not.
@@ -10,40 +10,28 @@ Features
 .Easy access
 .Modularisation
 
-Frontend (Browser Extension)
-Plasmo Framework – For rapid, cross-browser extension development.
+Frontend (User Interface)
+React.js (Vite): Chosen for its speed and component-based architecture, allowing us to build a responsive, interactive dashboard.
 
-React & TypeScript – For building a responsive, type-safe user interface.
+Tailwind CSS: Used for rapid UI development and a clean, modern aesthetic without writing custom CSS files.
 
-Tailwind CSS – For styling the "Shield" overlay without CSS conflicts on host sites.
+Lucide React: For lightweight, consistent iconography (Shields, Charts, Alerts).
 
-Backend & Infrastructure
-Python (FastAPI) – High-performance async API to handle requests.
+Backend (Logic & API)
+Python (3.9+): The primary language for our backend logic and data processing.
 
-Docker – Containerization for consistent deployment.
+FastAPI: selected for its high performance (asynchronous support) and automatic API documentation.
 
-Redis – Caching scan results for millisecond latency.
+Uvicorn: An ASGI web server implementation to run the FastAPI application.
 
 Google Technologies Used
-Google Vertex AI
+Google Vertex AI (Gemini 1.5 Flash): The "Brain" of the operation. We use Gemini to analyze course descriptions, pricing data, and reviews to generate a semantic "Credibility Score" and "ROI Verdict."
 
- We use Gemini's advanced context window to analyze complex job descriptions and course syllabi.Allowing us to calculate a semantic "ROI Score" and detect subtle scam language patterns that rule-based systems miss.
+Google Custom Search JSON API: The "Detective." Allows our backend to programmatically search the live web for Reddit threads and external reviews to validate user sentiment.
 
-Google Cloud Run
+Google Web Risk API: The "Security Guard." instantly checks URLs against Google's massive database of known phishing and malware sites before the AI even analyzes them.
 
-To host our Python backend. We chose Cloud Run for its serverless architecture, allowing our API to scale instantly from zero to thousands of concurrent requests during high-traffic periods (like career fairs) while maintaining low latency.
-
-Google Web Risk API
-
- To provide an instant "first line of defense." Before our AI even analyzes the text, this API checks the URL against Google's constantly updated index of over a million unsafe web resources, blocking known phishing and social engineering sites immediately.
-
-Google Cloud Firestore
-
-Used as our high-speed NoSQL database to store verified recruiter profiles and cache previous scan results. Its real-time capabilities allow us to sync the "Verified" status across all users instantly.
-
-Google Custom Search JSON API
-
-To perform "Grounding" checks. We programmatically search the web to verify if a recruiter actually works at the company they claim to represent, without violating terms of service by scraping platforms like LinkedIn directly.
+Google Cloud Console,Programmable Search Engine,gcloud
 
 Setup Instructions
 Steps to run the project locally:
